@@ -36,14 +36,26 @@
 
     <!------ HEADER ------>
     <div class="header pad-left pad-right center">
-      <div class="header-menu">
-      </div>
-      <div class="header-account">
+      <div class="header-menu regular">
+          <img src="images/header-menu.png"> 
+          MAIN NAVIGATION
       </div>
       <div class="header-logo">
         Damora
       </div>
-      <div class="header-cart">
+      <div class="header-account regular">
+        <a href="account.html">MY ACCOUNT</a>
+        <div class="line"></div>
+        <select id="header-currency">
+          <span>        <i class="fas fa-caret-down"></i>
+</span>
+          <option value="idr" selected>IDR</option>
+          <option value="usd">USD</option>
+        </select>
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="header-cart regular">
+          <img src="images/header-cart.png"> <div id="header-qty">0</div>
       </div>
     </div>
   </div>
@@ -65,8 +77,19 @@
     $('.pop-menu-content').css({'margin-left': m});
   }
   
+  function hideMenu() {
+    var popMenuWidth = $('.pop-menu').outerWidth();
+    $('.pop-menu').animate({'left': -1 * popMenuWidth});
+  }
+  
+  function showMenu() { 
+    $('.pop-menu').show();
+    $('.pop-menu').animate({'left': 0});
+  }
+
   $(document).ready(function(){
     resizeMainView();
+    hideMenu();
     $('.pop-menu').hide();
   })
   
@@ -75,12 +98,13 @@
   })
   
   $('.pop-menu-close i').click(function(){
-    var popMenuWidth = $('.pop-menu').outerWidth();
-    $('.pop-menu').animate({'left': -1 * popMenuWidth});
-    
+    hideMenu();
   })
   
-  
+  $('.header-menu').click(function(){
+    showMenu();
+  })
+    
   </script>
     
 </html>
