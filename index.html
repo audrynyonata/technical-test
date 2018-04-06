@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMORA</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+  <div class="main-view">
+    <!------ POP MENU ------>
+    <div class="pop-menu">
+      <div class="pop-menu-close right pad-right">
+        <i class="material-icons">close</i>
+      </div>
+      <div class="pop-menu-content pad-left pad-top pad-right">
+        <ul class="nav">
+          <li><a class="big" href="home.html">Home</a></li>
+          <li><a class="big" href="shop.html">Shop</a></li>
+          <li><a class="big" href="sale.html">Sale</a></li>
+          <li><a class="big" href="categories.html">Categories</a></li>
+          <br>
+          <li><a class="small" href="blog.html">Blog</a></li>
+          <li><a class="small" href="about.html">About</a></li>
+          <li><a class="small" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!------ HEADER ------>
+    <div class="header pad-left pad-right center">
+      <div class="header-menu">
+      </div>
+      <div class="header-account">
+      </div>
+      <div class="header-logo">
+        Damora
+      </div>
+      <div class="header-cart">
+      </div>
+    </div>
+  </div>
+  
+  
+  </body>
+  
+  <script>
+  var s = 30;
+  var m = 70; 
+
+  function resizeMainView() {
+    var mainViewHeight = $(window).height();
+    var mainViewWidth = $(window).width();
+    s = ($(window).width() - (2*55)) / 39;
+    m = m = 7 * s / 3; 
+    console.log(mainViewWidth+'x'+mainViewHeight);
+    $('.pop-menu').css({'width': '100%','height': mainViewHeight});
+    $('.pop-menu-content').css({'margin-left': m});
+  }
+  
+  $(document).ready(function(){
+    resizeMainView();
+    $('.pop-menu').hide();
+  })
+  
+  $(window).resize(function() {
+    resizeMainView();
+  })
+  
+  $('.pop-menu-close i').click(function(){
+    var popMenuWidth = $('.pop-menu').outerWidth();
+    $('.pop-menu').animate({'left': -1 * popMenuWidth});
+    
+  })
+  
+  
+  </script>
+    
+</html>

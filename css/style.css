@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url(../fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'BaronNeue';
+  src: url(../fonts/baron-neue/BaronNeue.otf);
+}
+
+@media screen and (max-width: 900px) {
+  .big {
+    padding-top: 10px !important;
+    font-size: 18pt !important;
+  }
+  
+  .small {
+    padding-top: 5px !important;
+    font-size: 12pt !important;
+  }
+  
+  .pad-left {
+    padding-left: 30px !important;
+  }
+  
+  .pad-top {
+    padding-top: 30px !important;
+  }
+  
+  .header {
+    height: 30px !important;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .big {
+    padding-top: 6px !important;
+    font-size: 18pt !important;
+  }
+  
+  .small {
+    padding-top: 2px !important;
+    font-size: 12pt !important;
+  }
+  
+  .pad-left {
+    padding-left: 30px !important;
+  }
+  
+  .pad-top {
+    padding-top: 30px !important;
+  }
+  
+  .header {
+    height: 30px !important;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-view {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.pad-left {
+  padding-left: 55px;
+}
+
+.pad-right {
+  padding-right: 55px;
+}
+
+.pad-top {
+  padding-top: 85px;
+}
+
+.pop-menu {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #454545 url(../images/damora.png) center bottom/100% auto no-repeat;
+}
+
+.pop-menu-close {
+  color: #fff;
+  padding-top: 48px;
+  cursor: pointer;
+  font-size: 24pt;
+}
+
+.pop-menu-content {
+  margin-left: 70px;
+}
+
+.pop-menu ul {
+  list-style-type: none;
+} 
+
+.pop-menu ul li a {
+  display: inline-block;
+  font-family: 'Roboto Regular';
+  color: #fff;
+}
+
+.big {
+  padding-top: 20px;
+  font-size: 36pt;
+}
+
+.small {
+  padding-top: 10px;
+  font-size: 20pt;
+}
+
+.header {
+  height: 85px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  font-family: 'BaronNeue';
+  color: #000;
+  font-size: 32pt;
+}
+
