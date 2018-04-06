@@ -36,45 +36,88 @@
 
     <!------ HEADER ------>
     <div class="header pad-left pad-right center">
+      
       <div class="header-menu regular">
-          <img src="images/header-menu.png"> 
-          MAIN NAVIGATION
+        <img src="images/header-menu.png" class="pad-inline"> 
+        MAIN NAVIGATION
       </div>
+      
       <div class="header-logo">
-        Damora
+        <a href="#">Damora</a>
       </div>
-      <div class="header-account regular">
-        <a href="account.html">MY ACCOUNT</a>
-        <div class="line"></div>
-        <select id="header-currency">
-          <span>        <i class="fas fa-caret-down"></i>
-</span>
-          <option value="idr" selected>IDR</option>
-          <option value="usd">USD</option>
-        </select>
-        <i class="fas fa-search"></i>
+      
+      <div class="header-right">        
+        <div class="header-account regular">
+          <a class="pad-inline" href="account.html">MY ACCOUNT</a>
+          <div class="line"></div>
+          <select class="pad-inline regular" id="header-currency">
+            <option value="idr" selected>IDR</option>
+            <option value="usd">USD</option>
+          </select>
+          <i class="fas fa-search pad-inline"></i>
+        </div>
+        
+        <div class="header-cart regular">
+          <img class="pad-inline" src="images/header-cart.png"> <div class="pad-inline" id="header-qty">0</div>
+        </div>
       </div>
-      <div class="header-cart regular">
-          <img src="images/header-cart.png"> <div id="header-qty">0</div>
+    </div>
+    
+    <!------ SLIDER ------>
+    <div class="slider">
+      <div class="slider-left pad-left pad-top">
+        <div id="slider-number"></div>
+      </div>
+      <div class="slider-right pad-top right">
+          
+      </div>
+      <div class="slider-nav">
+          <span id="slider-prev">PREV</span><div class="line"></div><span id="slider-next">NEXT</span>
+          </div>
+      
+    </div>
+    
+
+    
+    <!------ CONTENT ------>
+    <div class="content">
+      <div class="row">
+        <div class="col">a</div>
       </div>
     </div>
   </div>
-  
-  
   </body>
   
   <script>
   var s = 30;
   var m = 70; 
+  
+  var leftSliderImages=
+    ["images/slider-left-1.jpg",
+    "images/slider-left-2.jpg",
+    "images/slider-left-3.jpg",
+    "images/slider-left-4.jpg"];
+  var rightSliderImages=
+      ["images/slider-right-1.jpg",
+    "images/slider-right-2.jpg",
+    "images/slider-right-3.jpg",
+    "images/slider-right-4.jpg"];
 
+  var currentSliderNumber = 0;
+  
   function resizeMainView() {
     var mainViewHeight = $(window).height();
     var mainViewWidth = $(window).width();
+    var sliderRightHeight = $('.slider-right').outerHeight();
+    var sliderLeftHeight = $('.slider-left').outerHeight();
     s = ($(window).width() - (2*55)) / 39;
     m = m = 7 * s / 3; 
     console.log(mainViewWidth+'x'+mainViewHeight);
     $('.pop-menu').css({'width': '100%','height': mainViewHeight});
+    $('.slider').css({'width': '100%', 'height':sliderRightHeight });
     $('.pop-menu-content').css({'margin-left': m});
+    $('#slider-number').css({'right':s});
+
   }
   
   function hideMenu() {
@@ -91,6 +134,7 @@
     resizeMainView();
     hideMenu();
     $('.pop-menu').hide();
+    updateSlider();
   })
   
   $(window).resize(function() {
@@ -104,7 +148,33 @@
   $('.header-menu').click(function(){
     showMenu();
   })
-    
+  
+  
+  $('#slider-prev').click(function(){
+    if (currentSliderNumber-1 < 0) {
+      currentSliderNumber = leftSliderImages.length-1;
+    } else {
+      currentSliderNumber--;
+    }         
+    updateSlider();
+  })
+  
+  $('#slider-next').click(function(){
+    if (currentSliderNumber+1 >= leftSliderImages.length) {
+      currentSliderNumber = 0;
+    } else {
+      currentSliderNumber++;
+    }
+    updateSlider();
+  })
+  
+  function updateSlider() {
+    $('#slider-number').text(currentSliderNumber+1+'/'+leftSliderImages.length);
+    console.log(currentSliderNumber);
+    $('.slider-left').css("background-image", "url("+leftSliderImages[currentSliderNumber]+")"); 
+    $('.slider-right').css("background-image", "url("+rightSliderImages[currentSliderNumber]+")"); 
+
+  }
   </script>
     
 </html>
