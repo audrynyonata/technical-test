@@ -58,6 +58,8 @@
 
   .row, .main{
     flex-direction: column;
+       align-items: center;
+ 
   }
 }
 
@@ -104,6 +106,7 @@
   }
   .row, .main {
     flex-direction: column;
+    align-items: center;
   }
 }
 
