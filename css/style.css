@@ -505,10 +505,21 @@ select#header-currency {
   height: 100%;
   position: absolute;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
+  background-color: rgba(0,0,0, 0.6);
   transition: 0.5s;
+  font-family:'BebasNeueBold';
+  font-size:50pt;
+  color: #808080;
+  display: none;
 }
 
+.view-detail {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align:center;
+  height: 100%;
+}
 .catalog {
   position: relative;
   cursor:pointer;

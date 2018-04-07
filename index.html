@@ -84,6 +84,9 @@
         <div class="pad-right main">
           <div class="catalog-right">
             <div id="catalog1" class="catalog">
+              <div class="overlay">
+                <div class="view-detail">VIEW DETAIL</div>
+              </div>
               <img src="images/catalog-1.jpg">
               <div class="item-info">
                 <span class="item-name">NELKE STRIPE TOP</span>
@@ -91,6 +94,9 @@
               </div>
             </div>
             <div id="catalog1" class="catalog">
+              <div class="overlay">
+                <div class="view-detail">VIEW DETAIL</div>
+              </div>
               <img src="images/catalog-3.jpg">
               <div class="item-info">
                 <span class="item-name">NELKE STRIPE TOP</span>
@@ -98,6 +104,9 @@
               </div>
             </div>
             <div id="catalog1" class="catalog">
+              <div class="overlay">
+                <div class="view-detail">VIEW DETAIL</div>
+              </div>
               <img src="images/catalog-5.jpg">
               <div class="item-info">
                 <span class="item-name">NELKE STRIPE TOP</span>
@@ -107,6 +116,9 @@
           </div>
           <div class="catalog-left">
             <div id="catalog1" class="catalog">
+              <div class="overlay">
+                <div class="view-detail">VIEW DETAIL</div>
+              </div>
               <img src="images/catalog-2.jpg">
               <div class="item-info">
                 <span class="item-name">NELKE STRIPE TOP</span>
@@ -114,6 +126,9 @@
               </div>
             </div>
             <div id="catalog1" class="catalog">
+              <div class="overlay">
+                <div class="view-detail">VIEW DETAIL</div>
+              </div>
               <img src="images/catalog-4.jpg">
               <div class="item-info">
                 <span class="item-name">NELKE STRIPE TOP</span>
@@ -121,6 +136,9 @@
               </div>
             </div>
             <div id="catalog1" class="catalog">
+              <div class="overlay">
+                <div class="view-detail">VIEW DETAIL</div>
+              </div>
               <img src="images/catalog-6.jpg">
               <div class="item-info">
                 <span class="item-name">NELKE STRIPE TOP</span>
@@ -300,9 +318,14 @@
     $('.slider-right').css("background-image", "url("+rightSliderImages[currentSliderNumber]+")"); 
   }
   
-  $('.catalog').hover(function() {
-    console.log("mouseenter");
+  $('.catalog').mouseenter(function() {
+    $(this).find('.overlay').css({'display':'block'});
   })
+
+  $('.catalog').mouseleave(function() {
+    $(this).find('.overlay').css({'display':'none'});  
+  })
+
   </script>
     
 </html>
